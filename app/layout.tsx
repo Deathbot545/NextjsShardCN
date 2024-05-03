@@ -112,7 +112,7 @@ export default function RootLayout({
                   label: "23",
                   icon: ArchiveX,
                   variant: "ghost",
-                  href: ""
+                  href: "/Dash"
                 },
                 {
                   title: "Trash",
