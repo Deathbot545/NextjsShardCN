@@ -1,8 +1,30 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
-
-First, run the development server:
+First add the Shardcn Components :
+```bash
+npx shadcn-ui@latest add avatar
+npx shadcn-ui@latest add badge
+npx shadcn-ui@latest add button
+npx shadcn-ui@latest add calendar
+npx shadcn-ui@latest add card
+npx shadcn-ui@latest add command
+npx shadcn-ui@latest add dialog
+npx shadcn-ui@latest add dropdown-menu
+npx shadcn-ui@latest add input
+npx shadcn-ui@latest add label
+npx shadcn-ui@latest add menubar
+npx shadcn-ui@latest add popover
+npx shadcn-ui@latest add resizable
+npx shadcn-ui@latest add scroll-area
+npx shadcn-ui@latest add select
+npx shadcn-ui@latest add separator
+npx shadcn-ui@latest add switch
+npx shadcn-ui@latest add tabs
+npx shadcn-ui@latest add textarea
+npx shadcn-ui@latest add tooltip
+```
+Then, run the development server:
 
 ```bash
 npm run dev
