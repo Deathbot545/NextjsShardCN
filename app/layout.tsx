@@ -16,13 +16,11 @@ import {
   Users,
   Users2,
 } from "lucide-react"
-import Link from "next/link";
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable"
-import { cn } from "@/lib/utils";
 import { Mail, accounts } from "@/components/mail/mail-data";
 import { AccountSwitcher } from "@/components/account-switcher";
 
@@ -104,7 +102,7 @@ export default function RootLayout({
                   label: "",
                   icon: Send,
                   variant: "ghost",
-                  href: "/drafts",
+                  href: "/Account",
                 },
                 {
                   title: "Junk",

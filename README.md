@@ -23,6 +23,10 @@ npx shadcn-ui@latest add switch
 npx shadcn-ui@latest add tabs
 npx shadcn-ui@latest add textarea
 npx shadcn-ui@latest add tooltip
+npx shadcn-ui@latest add form
+npx shadcn-ui@latest add toast
+
+
 ```
 Then, run the development server:
 
