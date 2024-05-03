@@ -15,6 +15,9 @@ import {
   Trash2,
   Users,
   Users2,
+  Home,
+  User,
+
 } from "lucide-react"
 import {
   ResizableHandle,
@@ -86,21 +89,21 @@ export default function RootLayout({
                 {
                   title: "Dashboard",
                   label: "128",
-                  icon: Inbox,
+                  icon: Home,
                   variant: "default",
                   href: "/Dashboard", // Specify the route for the Dashboard page
                 },
                 {
                   title: "Mail",
                   label: "9",
-                  icon: Users,
+                  icon: Inbox,
                   variant: "ghost",
                   href: "/Mail", // Specify the route for the Drafts page
                 },
                 {
-                  title: "Sent",
+                  title: "Account",
                   label: "",
-                  icon: Send,
+                  icon: User,
                   variant: "ghost",
                   href: "/Account",
                 },

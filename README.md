@@ -1,7 +1,12 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
-First add the Shardcn Components :
+First add the shardcn 
+```bash
+npx shadcn-ui@latest init
+```
+
+Second add the Shardcn Components :
 ```bash
 npx shadcn-ui@latest add avatar
 npx shadcn-ui@latest add badge
@@ -27,6 +32,10 @@ npx shadcn-ui@latest add form
 npx shadcn-ui@latest add toast
 
 
+```
+add dependency 
+```bash
+npm install
 ```
 Then, run the development server:
 
