@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google"
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
-import { Nav } from "@/components/ui/nav";
+import { Nav } from "@/components/dashboard/nav";
 import {
   AlertCircle,
   Archive,
@@ -16,7 +16,7 @@ import {
   Users,
   Users2,
 } from "lucide-react"
-import { TooltipProvider } from "@/components/ui/tooltip";
+import Link from "next/link";
 import {
   ResizableHandle,
   ResizablePanel,
@@ -86,40 +86,46 @@ export default function RootLayout({
               isCollapsed={false}
               links={[
                 {
-                  title: "Inbox",
+                  title: "Dashboard",
                   label: "128",
                   icon: Inbox,
                   variant: "default",
+                  href: "/Dashboard", // Specify the route for the Dashboard page
                 },
                 {
-                  title: "Drafts",
+                  title: "Mail",
                   label: "9",
                   icon: Users,
                   variant: "ghost",
+                  href: "/Mail", // Specify the route for the Drafts page
                 },
                 {
                   title: "Sent",
                   label: "",
                   icon: Send,
                   variant: "ghost",
+                  href: "/drafts",
                 },
                 {
                   title: "Junk",
                   label: "23",
                   icon: ArchiveX,
                   variant: "ghost",
+                  href: ""
                 },
                 {
                   title: "Trash",
                   label: "",
                   icon: Trash2,
                   variant: "ghost",
+                  href: ""
                 },
                 {
                   title: "Archive",
                   label: "",
                   icon: Archive,
                   variant: "ghost",
+                  href: ""
                 },
               ]}
             />
@@ -132,30 +138,35 @@ export default function RootLayout({
                   label: "972",
                   icon: Users2,
                   variant: "ghost",
+                  href: ""
                 },
                 {
                   title: "Updates",
                   label: "342",
                   icon: AlertCircle,
                   variant: "ghost",
+                  href: ""
                 },
                 {
                   title: "Forums",
                   label: "128",
                   icon: MessagesSquare,
                   variant: "ghost",
+                  href: ""
                 },
                 {
                   title: "Shopping",
                   label: "8",
                   icon: ShoppingCart,
                   variant: "ghost",
+                  href: ""
                 },
                 {
                   title: "Promotions",
                   label: "21",
                   icon: Archive,
                   variant: "ghost",
+                  href: ""
                 },
               ]}
             />
@@ -180,3 +191,4 @@ export default function RootLayout({
     </>
   )
 }
+

@@ -1,5 +1,5 @@
 "use client"
-import { Nav } from "./ui/nav"
+import { Nav } from "./dashboard/nav"
 import {
     AlertCircle,
     Archive,
