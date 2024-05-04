@@ -17,7 +17,36 @@ import { Overview } from "@/components/dashboard/overview";
 import { RecentSales } from "@/components/dashboard/recent-sales";
 import { CardsMetric } from "@/components/charts/metric";
 
-
+const data = [
+  {
+    average: 400,
+    today: 240,
+  },
+  {
+    average: 300,
+    today: 139,
+  },
+  {
+    average: 200,
+    today: 980,
+  },
+  {
+    average: 278,
+    today: 390,
+  },
+  {
+    average: 189,
+    today: 480,
+  },
+  {
+    average: 239,
+    today: 380,
+  },
+  {
+    average: 349,
+    today: 430,
+  },
+];
 export default function Dashboard(){
     return(
         <>
@@ -90,6 +119,7 @@ export default function Dashboard(){
                     </p>
                   </CardContent>
                 </Card>
+                
                 <Card>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">
@@ -178,6 +208,22 @@ export default function Dashboard(){
                   </CardContent>
                 </Card>
                 <Card className="col-span-3">
+                <CardsMetric chartData={data} /> 
+    
+                  {/* <CardHeader>
+                    <CardTitle>Recent Sales</CardTitle>
+                    <CardDescription>
+                      You made 265 sales this month.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <RecentSales />
+                  </CardContent> */}
+                </Card>
+                
+              
+              </div>
+              <Card>
                   <CardHeader>
                     <CardTitle>Recent Sales</CardTitle>
                     <CardDescription>
@@ -188,8 +234,6 @@ export default function Dashboard(){
                     <RecentSales />
                   </CardContent>
                 </Card>
-              
-              </div>
             </TabsContent>
           </Tabs>
         </div>
