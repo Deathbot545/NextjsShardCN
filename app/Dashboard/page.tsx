@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/card"
 import { Overview } from "@/components/dashboard/overview";
 import { RecentSales } from "@/components/dashboard/recent-sales";
+import { CardsMetric } from "@/components/charts/metric";
 
 
 export default function Dashboard(){
@@ -48,13 +49,7 @@ export default function Dashboard(){
           </div>
         </div>
         <div className="flex-1 space-y-4 p-8 pt-6">
-          <div className="flex items-center justify-between space-y-2">
-            <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
-            <div className="flex items-center space-x-2">
-              <CalendarDateRangePicker />
-              <Button>Download</Button>
-            </div>
-          </div>
+          
           <Tabs defaultValue="overview" className="space-y-4">
             <TabsList>
               <TabsTrigger value="overview">Overview</TabsTrigger>
@@ -122,6 +117,7 @@ export default function Dashboard(){
                     </p>
                   </CardContent>
                 </Card>
+          
                 <Card>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">Sales</CardTitle>
@@ -192,6 +188,9 @@ export default function Dashboard(){
                     <RecentSales />
                   </CardContent>
                 </Card>
+                <div className="pt-3 sm:col-span-2 xl:pt-4">
+            <CardsMetric />
+          </div>
               </div>
             </TabsContent>
           </Tabs>
