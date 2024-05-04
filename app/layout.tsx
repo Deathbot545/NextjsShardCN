@@ -119,7 +119,7 @@ export default function RootLayout({
                   label: "",
                   icon: Trash2,
                   variant: "ghost",
-                  href: ""
+                  href: "/dummy"
                 },
                 {
                   title: "Archive",
