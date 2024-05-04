@@ -14,39 +14,8 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Overview } from "@/components/dashboard/overview";
-import { RecentSales } from "@/components/dashboard/recent-sales";
-import { CardsMetric } from "@/components/charts/metric";
+import { TableDemo } from "@/components/charts/metric";
 
-const data = [
-  {
-    average: 400,
-    today: 240,
-  },
-  {
-    average: 300,
-    today: 139,
-  },
-  {
-    average: 200,
-    today: 980,
-  },
-  {
-    average: 278,
-    today: 390,
-  },
-  {
-    average: 189,
-    today: 480,
-  },
-  {
-    average: 239,
-    today: 380,
-  },
-  {
-    average: 349,
-    today: 430,
-  },
-];
 export default function Dashboard(){
     return(
         <>
@@ -80,18 +49,7 @@ export default function Dashboard(){
         <div className="flex-1 space-y-4 p-8 pt-6">
           
           <Tabs defaultValue="overview" className="space-y-4">
-            <TabsList>
-              <TabsTrigger value="overview">Overview</TabsTrigger>
-              <TabsTrigger value="analytics" disabled>
-                Analytics
-              </TabsTrigger>
-              <TabsTrigger value="reports" disabled>
-                Reports
-              </TabsTrigger>
-              <TabsTrigger value="notifications" disabled>
-                Notifications
-              </TabsTrigger>
-            </TabsList>
+            
             <TabsContent value="overview" className="space-y-4">
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                 <Card>
@@ -208,7 +166,7 @@ export default function Dashboard(){
                   </CardContent>
                 </Card>
                 <Card className="col-span-3">
-                <CardsMetric chartData={data} /> 
+                <TableDemo/>
     
                   {/* <CardHeader>
                     <CardTitle>Recent Sales</CardTitle>
@@ -223,17 +181,7 @@ export default function Dashboard(){
                 
               
               </div>
-              <Card>
-                  <CardHeader>
-                    <CardTitle>Recent Sales</CardTitle>
-                    <CardDescription>
-                      You made 265 sales this month.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <RecentSales />
-                  </CardContent>
-                </Card>
+             
             </TabsContent>
           </Tabs>
         </div>

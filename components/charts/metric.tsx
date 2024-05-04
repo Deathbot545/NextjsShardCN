@@ -1,100 +1,88 @@
-'use client'
-import { useTheme } from "next-themes"
-import { Line, LineChart, ResponsiveContainer, Tooltip } from "recharts"
-
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-
-
-type ChartDataItem = {
-    average: number;
-    today: number;
+    Table,
+    TableBody,
+    TableCaption,
+    TableCell,
+    TableFooter,
+    TableHead,
+    TableHeader,
+    TableRow,
+  } from "@/components/ui/table"
+  
+  const invoices = [
+    {
+      invoice: "INV001",
+      paymentStatus: "Paid",
+      totalAmount: "$250.00",
+      paymentMethod: "Credit Card",
+    },
+    {
+      invoice: "INV002",
+      paymentStatus: "Pending",
+      totalAmount: "$150.00",
+      paymentMethod: "PayPal",
+    },
+    {
+      invoice: "INV003",
+      paymentStatus: "Unpaid",
+      totalAmount: "$350.00",
+      paymentMethod: "Bank Transfer",
+    },
+    {
+      invoice: "INV004",
+      paymentStatus: "Paid",
+      totalAmount: "$450.00",
+      paymentMethod: "Credit Card",
+    },
+    {
+      invoice: "INV005",
+      paymentStatus: "Paid",
+      totalAmount: "$550.00",
+      paymentMethod: "PayPal",
+    },
+    {
+      invoice: "INV006",
+      paymentStatus: "Pending",
+      totalAmount: "$200.00",
+      paymentMethod: "Bank Transfer",
+    },
+    {
+      invoice: "INV007",
+      paymentStatus: "Unpaid",
+      totalAmount: "$300.00",
+      paymentMethod: "Credit Card",
+    },
+  ]
+  
+  export function TableDemo() {
+    return (
+      <Table>
+        <TableCaption>A list of your recent invoices.</TableCaption>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-[100px]">Invoice</TableHead>
+            <TableHead>Status</TableHead>
+            <TableHead>Method</TableHead>
+            <TableHead className="text-right">Amount</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {invoices.map((invoice) => (
+            <TableRow key={invoice.invoice}>
+              <TableCell className="font-medium">{invoice.invoice}</TableCell>
+              <TableCell>{invoice.paymentStatus}</TableCell>
+              <TableCell>{invoice.paymentMethod}</TableCell>
+              <TableCell className="text-right">{invoice.totalAmount}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+        <TableFooter>
+          <TableRow>
+            <TableCell colSpan={3}>Total</TableCell>
+            <TableCell className="text-right">$2,500.00</TableCell>
+          </TableRow>
+        </TableFooter>
+      </Table>
+    )
   }
   
-export function CardsMetric({ chartData }: { chartData: ChartDataItem[] }) { // Step 1: Define a prop
-    const { theme: mode } = useTheme()
-  return (
-    
-      <><CardHeader>
-          <CardTitle>Exercise Minutes</CardTitle>
-          <CardDescription>
-              Your exercise minutes are ahead of where you normally are.
-          </CardDescription>
-      </CardHeader><CardContent className="pb-4">
-              <div className="h-[200px]">
-                  <ResponsiveContainer width="100%" height="100%">
-                      <LineChart
-                          data={chartData}
-                          margin={{
-                              top: 5,
-                              right: 10,
-                              left: 10,
-                              bottom: 0,
-                          }}
-                      >
-                          <Tooltip
-                              content={({ active, payload }) => {
-                                  if (active && payload && payload.length) {
-                                      return (
-                                          <div className="rounded-lg border bg-background p-2 shadow-sm">
-                                              <div className="grid grid-cols-2 gap-2">
-                                                  <div className="flex flex-col">
-                                                      <span className="text-[0.70rem] uppercase text-muted-foreground">
-                                                          Average
-                                                      </span>
-                                                      <span className="font-bold text-muted-foreground">
-                                                          {payload[0].value}
-                                                      </span>
-                                                  </div>
-                                                  <div className="flex flex-col">
-                                                      <span className="text-[0.70rem] uppercase text-muted-foreground">
-                                                          Today
-                                                      </span>
-                                                      <span className="font-bold">
-                                                          {payload[1].value}
-                                                      </span>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      )
-                                  }
-
-                                  return null
-                              } } />
-                          <Line
-                              type="monotone"
-                              strokeWidth={2}
-                              dataKey="average"
-                              activeDot={{
-                                  r: 6,
-                                  style: { fill: "var(--theme-primary)", opacity: 0.25 },
-                              }}
-                              style={{
-                                  stroke: "var(--theme-primary)",
-                                  opacity: 0.25,
-                                  "--theme-primary": `hsl()`,
-                              } as React.CSSProperties} />
-                          <Line
-                              type="monotone"
-                              dataKey="today"
-                              strokeWidth={2}
-                              activeDot={{
-                                  r: 8,
-                                  style: { fill: "var(--theme-primary)" },
-                              }}
-                              style={{
-                                  stroke: "var(--theme-primary)",
-                                  "--theme-primary": `hsl()`,
-                              } as React.CSSProperties} />
-                      </LineChart>
-                  </ResponsiveContainer>
-              </div>
-          </CardContent></>
-    
-  )
-}
