@@ -60,6 +60,7 @@ export default function RootLayout({
   mailProps,
 }: RootLayoutProps)  {
 
+  
   return (
     <>
       <html lang="en" suppressHydrationWarning>
