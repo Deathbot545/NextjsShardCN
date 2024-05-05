@@ -27,6 +27,7 @@ import {
 } from "@/components/ui/resizable"
 import { Mail, accounts } from "@/components/mail/mail-data";
 import { AccountSwitcher } from "@/components/account-switcher";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -81,7 +82,10 @@ export default function RootLayout({
   <ResizablePanel defaultSize={25} className="min-w-[50px] transition-all duration-300 ease-in-out">
     
     <div className="flex h-[52px] items-center justify-center">
-              <AccountSwitcher isCollapsed={false} accounts={accounts} />
+    <Avatar>
+  <AvatarImage src="https://github.com/shadcn.png" />
+  <AvatarFallback>CN</AvatarFallback>
+</Avatar>
             </div>
             
             <Nav
@@ -89,30 +93,30 @@ export default function RootLayout({
               links={[
                 {
                   title: "Dashboard",
-                  label: "128",
+                  label: "",
                   icon: Home,
                   variant: "default",
                   href: "/Dashboard", // Specify the route for the Dashboard page
                 },
                 {
                   title: "Mail",
-                  label: "9",
+                  label: "",
                   icon: Inbox,
-                  variant: "ghost",
+                  variant: "default",
                   href: "/Mail", // Specify the route for the Drafts page
                 },
                 {
                   title: "Account",
                   label: "",
                   icon: User,
-                  variant: "ghost",
+                  variant: "default",
                   href: "/Account",
                 },
                 {
                   title: "Junk",
-                  label: "23",
+                  label: "",
                   icon: ArchiveX,
-                  variant: "ghost",
+                  variant: "default",
                   href: "/Dash"
                 },
                 {
@@ -126,7 +130,7 @@ export default function RootLayout({
                   title: "Archive",
                   label: "",
                   icon: Archive,
-                  variant: "default",
+                  variant: "ghost",
                   href: ""
                 },
               ]}
@@ -137,35 +141,35 @@ export default function RootLayout({
               links={[
                 {
                   title: "Social",
-                  label: "972",
+                  label: "",
                   icon: Users2,
                   variant: "ghost",
                   href: ""
                 },
                 {
                   title: "Updates",
-                  label: "342",
+                  label: "",
                   icon: AlertCircle,
                   variant: "ghost",
                   href: ""
                 },
                 {
                   title: "Forums",
-                  label: "128",
+                  label: "",
                   icon: MessagesSquare,
                   variant: "ghost",
                   href: ""
                 },
                 {
                   title: "Shopping",
-                  label: "8",
+                  label: "",
                   icon: ShoppingCart,
                   variant: "ghost",
                   href: ""
                 },
                 {
                   title: "Promotions",
-                  label: "21",
+                  label: "",
                   icon: Archive,
                   variant: "ghost",
                   href: ""
