@@ -1,4 +1,5 @@
-import { useClient } from 'next/amp';
+
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google"
 import "./globals.css";
@@ -59,11 +60,6 @@ export default function RootLayout({
   navigation,
   mailProps,
 }: RootLayoutProps)  {
-  const client = useClient();
-
-  if (!client) {
-    return null; // Render nothing on the server
-  }
   
   return (
     <>
@@ -130,7 +126,7 @@ export default function RootLayout({
                   title: "Archive",
                   label: "",
                   icon: Archive,
-                  variant: "ghost",
+                  variant: "default",
                   href: ""
                 },
               ]}
