@@ -30,7 +30,6 @@ npx shadcn-ui@latest add textarea
 npx shadcn-ui@latest add tooltip
 npx shadcn-ui@latest add form
 npx shadcn-ui@latest add toast
-//lk
 
 ```
 add dependency 
