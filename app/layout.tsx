@@ -57,9 +57,7 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({
-  children,
-  navigation,
-  mailProps,
+  children
 }: RootLayoutProps)  {
   
   return (
