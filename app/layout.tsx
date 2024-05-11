@@ -94,14 +94,14 @@ export default function RootLayout({
                   label: "",
                   icon: Home,
                   variant: "default",
-                  href: "/Dashboard", // Specify the route for the Dashboard page
+                  href: "/Dashboard", 
                 },
                 {
                   title: "Mail",
                   label: "",
                   icon: Inbox,
                   variant: "default",
-                  href: "/Mail", // Specify the route for the Drafts page
+                  href: "/Mail", 
                 },
                 {
                   title: "Account",
@@ -176,11 +176,8 @@ export default function RootLayout({
             />
             
           </ResizablePanel>
-  
-  {/* Resizable Handle */}
   <ResizableHandle withHandle />
   
-  {/* Children Panel */}
   <ResizablePanel defaultSize={100}>
     <div className="flex h-full items-center justify-center p-6">
       <div className="w-full">{children}</div>
