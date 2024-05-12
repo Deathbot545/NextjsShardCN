@@ -6,6 +6,7 @@ First add the shardcn
 npx shadcn-ui@latest init
 ```
 
+
 Second add the Shardcn Components :
 ```bash
 npx shadcn-ui@latest add avatar
