@@ -5,7 +5,7 @@ First add the shardcn
 ```bash
 npx shadcn-ui@latest init
 ```
-//Teat
+
 Second add the Shardcn Components :
 ```bash
 npx shadcn-ui@latest add avatar
